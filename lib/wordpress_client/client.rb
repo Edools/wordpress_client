@@ -40,7 +40,7 @@ module WordpressClient
     # @raise {NotFoundError}
     # @raise {subclasses of Error} on other unexpected errors
     def find_post_per_slug(slug)
-      connection.get(Post, "posts?slug=#{slug}", _embed: nil)
+      connection.get(Post, "posts?slug=#{slug.to_s}", _embed: nil)
     end
 
     # Create a new {Post} with the given attributes in Wordpress and return it.
