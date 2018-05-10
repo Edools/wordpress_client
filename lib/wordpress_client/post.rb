@@ -10,7 +10,7 @@ module WordpressClient
       :title_html, :excerpt_html, :content_html,
       :updated_at, :date,
       :categories, :tags, :meta, :featured_media,
-      :tag_ids, :category_ids, :featured_media_id
+      :tag_ids, :category_ids, :featured_media_id, :author_id
     )
 
     # @!attribute [rw] title_html
@@ -79,7 +79,8 @@ module WordpressClient
       category_ids: [],
       tag_ids: [],
       featured_media: nil,
-      meta: {}
+      meta: {},
+      author_id: nil
     )
       @id = id
       @slug = slug
@@ -97,6 +98,7 @@ module WordpressClient
       @tag_ids = tag_ids
       @featured_media = featured_media
       @meta = meta
+      @author_id = author_id
     end
 
     # Returns the featured media, if the featured media is an image.
